@@ -1,5 +1,5 @@
-#include<iostream>
-#include<conio.h>
+#include <iostream>
+#include <conio.h>
 //#define SORTING
 using namespace std;
 using std::cin;

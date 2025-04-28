@@ -1,4 +1,4 @@
-#include"TemplatedArrayFunctions.h"
+#include "TemplatedArrayFunctions.h"
 
 template<typename T>
 void Print(T arr[], const int n)

@@ -1,4 +1,4 @@
-﻿#include<iostream>
+﻿#include <iostream>
 using namespace std;
 
 int Sum(int a = 0, int b = 0, int c = 0);

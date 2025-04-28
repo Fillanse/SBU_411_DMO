@@ -1,6 +1,6 @@
-﻿#include"FillRand.h"
-#include"TemplatedArrayFunctions.h"
-#include"TemplatedArrayFunctions.cpp"
+﻿#include "FillRand.h"
+#include "TemplatedArrayFunctions.h"
+#include "TemplatedArrayFunctions.cpp"
 
 void main()
 {
