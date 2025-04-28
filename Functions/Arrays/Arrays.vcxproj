@@ -143,7 +143,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="FillaRand.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Shift.cpp" />
+    <ClCompile Include="TemplatedArrayFunctions.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="constants.h" />
+    <ClInclude Include="FillRand.h" />
+    <ClInclude Include="Shift.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="TemplatedArrayFunctions.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

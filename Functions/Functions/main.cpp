@@ -1,11 +1,11 @@
 ﻿#include<iostream>
 using namespace std;
 
-int Sum(int a = 0, int b = 0, int c = 0);	//Прототип функции (Объявление функции - Function declaration)
+int Sum(int a = 0, int b = 0, int c = 0);
 int Difference(int a, int b);
 int Product(int a, int b);
 double Quotient(int a, int b);
-//C2660: Function doesn't take N arguments
+
 
 void main()
 {
@@ -13,7 +13,7 @@ void main()
 	cout << "Hello Functions" << endl;
 	int a = 2;
 	int b = 3;
-	int c = Sum(a, b, 11);		//Использование функции (Вызов функции - Function call)
+	int c = Sum(a, b, 11);
 	cout << a << " + " << b << " = " << c << endl;
 	cout << a << " - " << b << " = " << Difference(a, b) << endl;
 	cout << a << " * " << b << " = " << Product(a, b) << endl;

@@ -39,23 +39,23 @@ void main()
 	int arr[n];
 	int tab;
 	FILLRand(arr, n);
-	cout << "Вывод массива :  ";
+	cout << "Array output:  ";
 	Print(arr, n);
-	cout << "Сумма элементов массива :  " << Sum(arr, n) << endl;
-	cout << "Среднее-арифметическое массива :  " << Sum(arr, n) / n << endl;
-	cout << "Минимальное значение массива :  " << Min(arr, n) << endl;
-	cout << "Максимальное значение массива :  " << Max(arr, n) << endl;
-	cout << "Вывод массива в обратном порядке :  ";
+	cout << "Sum of array elements:  " << Sum(arr, n) << endl;
+	cout << "Avg of array elements:  " << Sum(arr, n) / n << endl;
+	cout << "Min value in the array:  " << Min(arr, n) << endl;
+	cout << "Max value in the array:  " << Max(arr, n) << endl;
+	cout << "Revered array output:  ";
 	Rev(arr, n);
-	cout << "Введите количество сдвигов влево :  ";
+	cout << "Enter the number of left shifts:  ";
 	cin >> tab;
 	ShiftLeft(arr, n, tab);
-	cout << "Сдвиг массива влево :  ";
+	cout << "Array after left shift:  ";
 	Print(arr, n);
-	cout << "Введите количество сдвигов вправо : ";
+	cout << "Enter the number of right shifts: ";
 	cin >> tab;
 	ShiftRight(arr, n, tab);
-	cout << "Сдвиг массива вправо : ";
+	cout << "Array after right shift: ";
 	Print(arr, n);
 }
 void FILLRand(int arr[], const int n)
