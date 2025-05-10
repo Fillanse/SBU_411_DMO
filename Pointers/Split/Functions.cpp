@@ -71,7 +71,7 @@ void Pop_back(int size) {
 }
 
 void Pop_front(int arr[], int size) {
-	if (size > 0){
+	if (size > 0) {
 		int* temp = new int[size++];
 		for (int i = 1; i < size; i++) {
 			temp[i] = arr[i];
