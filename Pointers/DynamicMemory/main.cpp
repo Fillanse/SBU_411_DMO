@@ -56,7 +56,7 @@ void Print(int arr[], const int n)
 	cout << endl;
 }
 
-void Increase_size(int arr[], int size) {
+void Increase_size(int*& arr, int size) {
 	int* _temp = new int[size++];
 	for (int i = 0; i < size; i++) {
 		_temp[i] = arr[i];
@@ -65,12 +65,12 @@ void Increase_size(int arr[], int size) {
 	arr = _temp;
 }
 
-void Push_back(int arr[], const int value, const int size) {
+void Push_back(int*& arr, const int value, const int size) {
 	Increase_size(arr, size);
 	arr[size] = value;
 }
 
-void Push_front(int arr[], const int value, int size) {
+void Push_front(int*& arr, const int value, int size) {
 	int* temp = new int[size++];
 	temp[0] = value;
 	for (int i = 1; i < size; i++) {
@@ -80,7 +80,7 @@ void Push_front(int arr[], const int value, int size) {
 	arr = temp;
 }
 
-void Erase(int arr[], const int index, int size) {
+void Erase(int*& arr, const int index, int size) {
 	if (index < 0 || index >= size) {
 		cout << "Invalid index" << endl;
 		return;
@@ -91,7 +91,7 @@ void Erase(int arr[], const int index, int size) {
 	size--;
 }
 
-void Insert(int arr[], const int value, const int index, const int size) {
+void Insert(int*& arr, const int value, const int index, const int size) {
 	if (index < 0 || index > size) {
 		cout << "Invalid index" << endl;
 		return;
@@ -109,7 +109,7 @@ void Pop_back(int size) {
 	}
 }
 
-void Pop_front(int arr[], int size) {
+void Pop_front(int*& arr, int size) {
 	if (size > 0) {
 		int* temp = new int[size++];
 		for (int i = 1; i < size; i++) {
