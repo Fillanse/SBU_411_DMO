@@ -221,7 +221,7 @@ void Push_row_back(int**& arr, int rows, const int cols, const int* values) {
 		temp[rows][j] = values[j];
 	}
 
-	Clear(arr, rows, cols);
+	delete[] arr;
 	arr = temp;
 	rows++;
 }
