@@ -85,7 +85,7 @@ void main()
 	delete[] arr;
 }
 
-void FillRand(double** arr, const int rows, const int cols)
+void FillRand(int** arr, const int rows, const int cols)
 {
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < cols; j++)
@@ -96,7 +96,7 @@ void FillRand(double** arr, const int rows, const int cols)
 
 }
 
-void FillRand(double* arr, const int n)
+void FillRand(int* arr, const int n)
 {
 	for (int i = 0; i < n; i++)
 	{
@@ -212,12 +212,12 @@ void Clear(int**& arr, const int rows, const int cols) {
 void Push_row_back(int**& arr, int rows, const int cols, const int* values) {
 	int** temp = new int* [rows + 1];
 
-	for (int i = 0; i < rows; ++i) {
+	for (int i = 0; i < rows; i++) {
 		temp[i] = arr[i];
 	}
 
 	temp[rows] = new int[cols];
-	for (int j = 0; j < cols; ++j) {
+	for (int j = 0; j < cols; j++) {
 		temp[rows][j] = values[j];
 	}
 
@@ -231,11 +231,11 @@ void Push_row_front(int**& arr, int rows, const int cols, const int* values) {
 	int** temp = new int* [rows + 1];
 
 	temp[0] = new int[cols];
-	for (int j = 0; j < cols; ++j) {
+	for (int j = 0; j < cols; j++) {
 		temp[0][j] = values[j];
 	}
 
-	for (int i = 0; i < rows; ++i) {
+	for (int i = 0; i < rows; i++) {
 		temp[i + 1] = arr[i];
 	}
 
