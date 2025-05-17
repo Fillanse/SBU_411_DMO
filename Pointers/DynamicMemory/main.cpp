@@ -6,8 +6,8 @@ using std::endl;
 
 #define tab "\t"
 
-void FillRand(int* arr, const int n);
-void FillRand(int** arr, const int rows, const int cols);
+void FillRand(double* arr, const int n);
+void FillRand(double** arr, const int rows, const int cols);
 
 void Print(int* arr, const int n);
 void Print(int** arr, const int rows, const int cols);
@@ -85,7 +85,7 @@ void main()
 	delete[] arr;
 }
 
-void FillRand(int** arr, const int rows, const int cols)
+void FillRand(double** arr, const int rows, const int cols)
 {
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < cols; j++)
@@ -96,7 +96,7 @@ void FillRand(int** arr, const int rows, const int cols)
 
 }
 
-void FillRand(int* arr, const int n)
+void FillRand(double* arr, const int n)
 {
 	for (int i = 0; i < n; i++)
 	{
