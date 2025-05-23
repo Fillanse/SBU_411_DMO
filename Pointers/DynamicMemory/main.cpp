@@ -6,8 +6,8 @@ using std::endl;
 
 #define tab "\t"
 
-void FillRand(int* arr, const int n);
-void FillRand(int** arr, const int rows, const int cols);
+template<typename T> void FillRand(int* arr, const int n);
+template<typename T> void FillRand(int** arr, const int rows, const int cols);
 
 template<typename T> void Print(T* arr, const int n);
 template<typename T> void Print(T** arr, const int rows, const int cols);
