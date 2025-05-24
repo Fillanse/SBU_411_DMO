@@ -6,8 +6,8 @@ using std::endl;
 
 #define tab "\t"
 
-template<typename T> void FillRand(int* arr, const int n);
-template<typename T> void FillRand(int** arr, const int rows, const int cols);
+void FillRand(int* arr, const int n);
+void FillRand(int** arr, const int rows, const int cols);
 
 template<typename T> void Print(T* arr, const int n);
 template<typename T> void Print(T** arr, const int rows, const int cols);
@@ -22,12 +22,14 @@ template<typename T> void Pop_front(T*& arr, int size);
 
 template<typename T> void Allocate(const int rows, const int cols);
 template<typename T> void Clear(T**& arr, const int rows, const int cols);
+
 template<typename T> void Push_row_back(T**& arr, int rows, const int cols, const T* values);
 template<typename T> void Push_row_front(T**& arr, int rows, const int cols, const T* values);
 template<typename T> void Insert_row(T**& arr, int rows, const int cols, const int index, const T* values);
 template<typename T> void Push_col_back(T**& arr, const int rows, int cols, const T* values);
 template<typename T> void Push_col_front(T**& arr, const int rows, int cols, const T* values);
 template<typename T> void Insert_col(T**& arr, const int rows, int cols, const int index, const T* values);
+
 template<typename T> void Pop_row_back(T**& arr, int rows);
 template<typename T> void Pop_row_front(T**& arr, int rows);
 template<typename T> void Erase_row(T**& arr, int rows, const int cols, const int index);
@@ -36,7 +38,7 @@ template<typename T> void Pop_col_front(T**& arr, const int rows, int cols);
 template<typename T> void Erase_col(T**& arr, const int rows, int cols, const int index);
 
 //#define DYNAMIC_MEMORY_1
-//#define DYNAMIC_MEMORY_2
+#define DYNAMIC_MEMORY_2
 
 void main()
 {
@@ -75,25 +77,44 @@ void main()
 #ifdef DYNAMIC_MEMORY_2
 	int rows;
 	int cols;
-
-	cout << "Enter amount of rows: "; cin >> rows;
-	cout << "Enter amount of columns: "; cin >> cols;
+	cout << "Input amount of columns: "; cin >> rows;
+	cout << "Input amount of rows: "; cin >> cols;
 
 	int** arr = new int* [rows];
 
-	for (int i = 0; i < rows; i++) {
+	for (int i = 0; i < rows; i++)
+	{
 		arr[i] = new int[cols];
 	}
 
+	/*cout << "Память выделена, для добавления столбца";
+	system("PAUSE");
+
+	push_col_back(arr, rows, cols);
+
+	cout << "Столбец добавлен" << endl;*/
+
 	FillRand(arr, rows, cols);
+	Print(arr, rows, cols);
+
+	Push_row_back(arr, rows, cols, {0});
+	Print(arr, rows, cols);
+
+	Push_col_back(arr, rows, cols, {0});
 	Print(arr, rows, cols);
 
 	Pop_row_back(arr, rows);
 	Print(arr, rows, cols);
 
-	for (int i = 0; i < rows; i++) {
-		delete arr[i];
+	Pop_col_back(arr, rows, cols);
+	Print(arr, rows, cols);
+
+
+	for (int i = 0; i < rows; i++)
+	{
+		delete[] arr[i];
 	}
+
 	delete[] arr;
 #endif // DYNAMOC_MEMORY_2
 
@@ -201,7 +222,7 @@ template<typename T>
 void Pop_back(T*& arr, int size) {
 	if (size > 0) {
 		T* temp = new T[--size];
-		for (int i = 0; i < size - 1; ++i) {
+		for (int i = 0; i < size - 1; i++) {
 			temp[i] = arr[i];
 		}		
 		delete[] arr;
@@ -246,12 +267,12 @@ template<typename T>
 void Push_row_back(T**& arr, int rows, const int cols, const T* values) {
 	T** temp = new T* [rows + 1];
 
-	for (int i = 0; i < rows; ++i) {
+	for (int i = 0; i < rows; i++) {
 		temp[i] = arr[i];
 	}
 
 	temp[rows] = new T[cols];
-	for (int j = 0; j < cols; ++j) {
+	for (int j = 0; j < cols; j++) {
 		temp[rows][j] = values[j];
 	}
 
@@ -265,11 +286,11 @@ void Push_row_front(T**& arr, int rows, const int cols, const T* values) {
 	int** temp = new int* [rows + 1];
 
 	temp[0] = new T[cols];
-	for (int j = 0; j < cols; ++j) {
+	for (int j = 0; j < cols; j++) {
 		temp[0][j] = values[j];
 	}
 
-	for (int i = 0; i < rows; ++i) {
+	for (int i = 0; i < rows; i++) {
 		temp[i + 1] = arr[i];
 	}
 
