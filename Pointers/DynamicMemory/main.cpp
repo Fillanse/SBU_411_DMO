@@ -20,6 +20,8 @@ template<typename T> void Insert(T*& arr, const T value, const int index, int si
 template<typename T> void Pop_back(T*& arr, int size);
 template<typename T> void Pop_front(T*& arr, int size);
 
+template<typename T> void Allocate(const int rows, const int cols);
+template<typename T> void Clear(T**& arr, const int rows, const int cols);
 template<typename T> void Push_row_back(T**& arr, int rows, const int cols, const T* values);
 template<typename T> void Pop_row_back(T**& arr, int rows);
 template<typename T> void Pop_row_front(T**& arr, int rows);
